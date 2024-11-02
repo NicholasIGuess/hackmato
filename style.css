@@ -1,0 +1,96 @@
+  @font-face {
+    font-family: "comfy";
+    src: url("Comfy Feeling.otf");
+  }
+
+  @font-face {
+    font-family: "digital";
+    src: url("Digital.ttf");
+  }
+  
+  .backbtn {
+    position: fixed;
+    z-index: 9999;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+    font-family: sans-serif;
+    height: 35px;
+    line-height: 20px;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .timer {
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+    background-color: #ff474c;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  #count {
+    font-size: 5rem;
+    font-family: 'digital', cursive;
+  }
+
+  #phase {
+    font-size: 2rem;
+    font-family: 'comfy', cursive;
+  }
+
+  button {
+    margin: 0.5rem 1rem;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 0.25rem;
+    font-size: larger;
+    font-weight: 700;
+    cursor: pointer;
+    height: 35px;
+  }
+  
+  .content {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  
+  p {
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .backbtn:hover {
+    background-color: #11d84d;
+    color: #fff;
+  }
