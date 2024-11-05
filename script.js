@@ -1,10 +1,10 @@
 var shortBreak = 300;
-var longBreak = 900;
+var longBreak = 1800;
 var pomodoro = 1500;
 var timer = pomodoro;
 var currentPhase = 0;
 var numBreaks = 0;
-var breakAmount = 3;
+var breakAmount = 4;
 var timerInterval;
 
 var startBtn = document.getElementById("start");
@@ -36,23 +36,22 @@ function start() {
         document.title = secondsToTime(timer) + " - hackmato";
         if (timer == 0) {
             if (currentPhase == 0) {
+                currentPhase = 1;
+                timer = shortBreak;
+                numBreaks++;
+            } else if (currentPhase == 1) {
                 if (numBreaks == breakAmount) {
                     currentPhase = 2;
                     timer = longBreak;
                     numBreaks = 0;
                 } else {
-                    currentPhase = 1;
-                    timer = shortBreak;
-                    numBreaks++;
+                    currentPhase = 0;
+                    timer = pomodoro;
                 }
-            } else if (currentPhase == 1) {
-                currentPhase = 0;
-                timer = pomodoro;
             } else if (currentPhase == 2) {
                 currentPhase = 0;
                 timer = pomodoro;
             }
-
             document.getElementById("phase").innerHTML = currentPhase == 0 ? "get to work!" : currentPhase == 1 ? "take a break!" : "nice, a long break!";
             document.getElementsByClassName("timer")[0].style.backgroundColor = currentPhase == 0 ? "#ff4747" : currentPhase == 1 ? "#88ff88" : "#47a9ff";
             document.getElementById("count").innerHTML = secondsToTime(timer);
@@ -77,23 +76,22 @@ function pause() {
             document.title = secondsToTime(timer) + " - hackmato";
             if (timer == 0) {
                 if (currentPhase == 0) {
+                    currentPhase = 1;
+                    timer = shortBreak;
+                    numBreaks++;
+                } else if (currentPhase == 1) {
                     if (numBreaks == breakAmount) {
                         currentPhase = 2;
                         timer = longBreak;
                         numBreaks = 0;
                     } else {
-                        currentPhase = 1;
-                        timer = shortBreak;
-                        numBreaks++;
+                        currentPhase = 0;
+                        timer = pomodoro;
                     }
-                } else if (currentPhase == 1) {
-                    currentPhase = 0;
-                    timer = pomodoro;
                 } else if (currentPhase == 2) {
                     currentPhase = 0;
                     timer = pomodoro;
                 }
-    
                 document.getElementById("phase").innerHTML = currentPhase == 0 ? "get to work!" : currentPhase == 1 ? "take a break!" : "nice, a long break!";
                 document.getElementsByClassName("timer")[0].style.backgroundColor = currentPhase == 0 ? "#ff4747" : currentPhase == 1 ? "#88ff88" : "#47a9ff";
                 document.getElementById("count").innerHTML = secondsToTime(timer);
